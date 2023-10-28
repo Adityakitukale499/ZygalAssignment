@@ -1,6 +1,3 @@
-# ZygalAssignment
-
-
 # Calendar App Assignment
 
 This assignment involves creating a simple calendar application using HTML, CSS, and JavaScript. The application allows users to select a month and year, dynamically generate a calendar, and change cell background colors based on user input.
