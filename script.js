@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     monthSelect.addEventListener('change', updateCalendar);
     yearSelect.addEventListener('change', updateCalendar);
 
-    // Event listener for date input and Enter key press
+    
     enterDateInput.addEventListener('keyup', function (event) {
         console.log(event.target.value);
         
