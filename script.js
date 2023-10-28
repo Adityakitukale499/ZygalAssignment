@@ -47,15 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
             // console.log(cell.classList);
         }
     }
-
+    let month= ["January","February","March","April","May","June","July",
+    "August","September","October","November","December"];
     for (let i = 1; i <= 12; i++) {
         const option = document.createElement('option');
         option.value = i;
-        option.textContent = i;
+        option.textContent = month[i-1];
         monthSelect.appendChild(option);
     }
 
-    for (let i = 2020; i <= 2030; i++) {
+    for (let i = 2010; i <= 2030; i++) {
         const option = document.createElement('option');
         option.value = i;
         option.textContent = i;
