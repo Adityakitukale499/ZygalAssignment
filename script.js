@@ -66,8 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener for date input and Enter key press
     enterDateInput.addEventListener('keyup', function (event) {
         console.log(event.target.value);
+        
         if (event.key === 'Enter') {
-            if(selectDate.includes(parseInt(event.target.value))){
+            if(parseInt(event.target.value) < 1 || parseInt(event.target.value) > 31){
+                alert('Enter Valid Date')
+            }
+            else if(selectDate.includes(parseInt(event.target.value))){
                 console.log('');
                selectDate = selectDate.filter((e)=> e != parseInt(event.target.value))
             }else{
@@ -84,12 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     
-    function toggleColor(event) {
-        console.log(event.target.classList);
-        // updateCalendar()
-        event.target.classList.remove('cell')
-        event.target.classList.add('green')
-    }
+    // function toggleColor(event) {
+    //     console.log(event.target.classList);
+    //     // updateCalendar()
+    //     event.target.classList.remove('cell')
+    //     event.target.classList.add('green')
+    // }
     
     
     const currentDate = new Date();
