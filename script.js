@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const yearSelect = document.getElementById('year');
     const enterDateInput = document.getElementById('enterDate');
     let selectDate = [];
-    let clickDate = ''
+    let lastDateInMonth = 31;
 
     function generateCalendar(month, year) {
         console.log(selectDate);
@@ -15,11 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const daysInMonth = new Date(year, month, 0).getDate();
         console.log(daysInMonth);
+        lastDateInMonth = daysInMonth
 
         const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         for (const day of daysOfWeek) {
             const cell = document.createElement('div');
             cell.className = 'cell';
+            cell.classList.add('dayCell')
             cell.textContent = day;
             calendar.appendChild(cell);
         }
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(event.target.value);
         
         if (event.key === 'Enter') {
-            if(parseInt(event.target.value) < 1 || parseInt(event.target.value) > 31){
+            if(parseInt(event.target.value) < 1 || parseInt(event.target.value) > lastDateInMonth){
                 alert('Enter Valid Date')
             }
             else if(selectDate.includes(parseInt(event.target.value))){
